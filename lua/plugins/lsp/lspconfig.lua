@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -54,6 +54,15 @@ return {
         lspconfig["graphql"].setup({
           capabilities = capabilities,
           filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+        })
+      end,
+
+      ["intelephense"] = function()
+        -- configure graphql language server
+        lspconfig["intelephense"].setup({
+          cmd = { "intelephense" },
+          capabilities = capabilities,
+          filetypes = { "php" },
         })
       end,
       ["emmet_ls"] = function()

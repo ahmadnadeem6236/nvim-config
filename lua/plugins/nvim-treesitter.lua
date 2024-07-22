@@ -18,9 +18,8 @@ return {
       'lua',
     },
   },
-  config = function (_, opts)
+  config = function(_, opts)
     local configs = require("nvim-treesitter.configs")
     configs.setup(opts)
   end
 }
-
